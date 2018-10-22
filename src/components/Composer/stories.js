@@ -18,6 +18,13 @@ storiesOf('Components|Composer', module)
 	))
 	.addDecorator(withKnobs)
 	.addDecorator(centered)
+	.add('simple', () => (
+		<Composer
+			placeholder={text('placeholder', 'Insert your text here')}
+			onInput={action('input')}
+			onSubmit={action('submit')}
+		/>
+	))
 	.add('composer with actions', () =>
 		(<Composer
 			onSubmit={console.log}
